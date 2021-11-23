@@ -14,52 +14,9 @@ public class Date {
     numberOfDates++;
   }
   public Date(int monthChange, int dayChange, int yearChange) {
-    month = monthChange;
-    day = dayChange;
-    year = yearChange;
-    if (month == 2 && day >= 28) {
-      if (year%4 == 0 && year%100 != 0 && day > 29) {
-        day = 29;
-        System.out.println("Impossible day value\nDay is now set to 29");
-      }
-      else if (year%400 == 0 && day > 29) {
-        day = 29;
-        System.out.println("Impossible day value\nDay is now set to 29");
-      }
-      else {
-        day = 28;
-        System.out.println("Impossible day value\nDay is now set to 28");
-      }
-    }
-    else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8|| month == 10|| month == 12) {
-      if (day > 31) {
-        day = 31;
-        System.out.println("Impossible day value\nDay is now set to 31");
-      }
-      else {
-        day = dayChange;
-      }
-    }
-    else if (month == 4 || month == 6 || month == 9 || month == 11) {
-      if (day > 30) {
-        day = 30;
-        System.out.println("Impossible day value\nDay is now set to 30");
-      }
-      else {
-        day = dayChange;
-      }
-    }
-    else {
-      month = 12;
-      System.out.println("Impossible month value\nMonth is now set to 12");
-      if (day > 31) {
-        day = 31;
-        System.out.println("Impossible day value\nDay is now set to 31");
-      }
-      else {
-        day = dayChange;
-      }
-    }
+    setMonth(monthChange);
+    setDay(dayChange);
+    setYear(yearChange);
     numberOfDates++;
   }
   public int getMonth() {
